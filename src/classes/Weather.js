@@ -56,7 +56,6 @@ export class Weather {
   }
   async getForecast() {
     const data = await this.getData();
-    console.log(data);
 
     return [data.currentConditions, ...data.days.slice(1, 5)].map((day) =>
       this.parse(day),
