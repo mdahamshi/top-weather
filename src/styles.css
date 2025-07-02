@@ -16,6 +16,7 @@
     "Helvetica Neue",
     sans-serif;
 }
+
 :root {
   --lite-gray: #f0f1f4;
   --label-width: 120px;
@@ -25,39 +26,92 @@
   --sb-padding: 16px;
   --sb-border-color-thin: #f0f1f4;
 }
+
 body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  max-width: 980px;
+  margin: auto;
 }
+
+header nav {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#logo-name {
+  font-size: 32px;
+}
+
 footer {
   margin-top: auto;
   padding: 8px;
 }
+
 .flex-row {
   display: flex;
   gap: 25px;
   align-items: center;
 }
+
 .flex-col {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-button:hover {
+header {
+  padding: 8px;
+}
+
+header nav button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  gap: 10px;
+}
+
+.logo {
+  gap: 10px;
+}
+
+button:not([disabled]):hover {
   filter: brightness(1.1);
   cursor: pointer;
   transform: scale(1.03);
   transition: all 0.3s ease;
 }
+
 button:focus-visible,
 button:focus {
   outline: none;
 }
+
+button:disabled {
+  background-color: rgb(202, 202, 202) !important;
+}
+
 button {
   cursor: pointer;
 }
+
+.hidden {
+  display: none !important;
+}
+
+#message {
+  text-align: center;
+  background-color: red;
+  color: white;
+  padding: 8px;
+  font-weight: 700;
+}
+
+#message::first-letter {
+  text-transform: uppercase;
+}
+
 button.sb-button {
   border-radius: var(--sb-corner-radius);
   color: white;
@@ -67,7 +121,9 @@ button.sb-button {
   font-weight: bold;
   font-size: 16px;
   border: none;
+  white-space: nowrap;
 }
+
 button:active,
 .clickable:active,
 .clickable {

@@ -8,24 +8,45 @@
   </head>
   <body>
     <header>
-      <nav>
-        <button class="flex-row clickable logo" data-action="home">
-          <img id="nav-logo" width="30" height="30" alt="SalmaTodo logo" />
-          <h2 id="logo-name"></h2>
-        </button>
+      <nav class="flex-row">
+        <button class="flex-row clickable logo">
+          <svg
+            width="40"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <title>weather-cloudy</title>
+            <path
+              d="M6,19A5,5 0 0,1 1,14A5,5 0 0,1 6,9C7,6.65 9.3,5 12,5C15.43,5 18.24,7.66 18.5,11.03L19,11A4,4 0 0,1 23,15A4,4 0 0,1 19,19H6M19,13H17V12A5,5 0 0,0 12,7C9.5,7 7.45,8.82 7.06,11.19C6.73,11.07 6.37,11 6,11A3,3 0 0,0 3,14A3,3 0 0,0 6,17H19A2,2 0 0,0 21,15A2,2 0 0,0 19,13Z"
+            />
+          </svg>
 
-        <div class="flex-row">
-          <div class="flex-row nav-links">
-            <button class="sb-button" data-action="add-list">Add List</button>
-            <div class="user-menu flex-row"></div>
-          </div>
-          <img id="user-img" width="40" alt="avatart" class="sb-shadow" />
-          <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-        </div>
+          <h1 id="logo-name"></h1>
+        </button>
+        <form id="locationForm" class="flex-row">
+          <label>
+            <input type="radio" name="unit" value="metric" checked /> °C
+          </label>
+          <label> <input type="radio" name="unit" value="us" /> °F </label>
+          <input
+            type="text"
+            id="locationInput"
+            placeholder="Enter location"
+            required
+          />
+          <button class="clickable sb-button" type="submit">Get Weather</button>
+        </form>
       </nav>
     </header>
 
-    <div id="content" class="flex-col"></div>
+    <div class="container flex-col">
+      <p id="message" class="hidden"></p>
+
+      <h1></h1>
+
+      <div id="loading" hidden>Loading...</div>
+      <div id="weatherDisplay" class="weather-cards"></div>
+    </div>
 
     <footer class="flex-col"></footer>
   </body>

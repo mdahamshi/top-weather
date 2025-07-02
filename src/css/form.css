@@ -1,0 +1,25 @@
+form.flex-col {
+  gap: 8px;
+}
+form h2 {
+  margin-bottom: 16px;
+}
+form input,
+form select {
+  background-color: #ffffff;
+  border: 1px solid var(--lite-gray);
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+form input:invalid {
+  border: 1px solid #d55c5f;
+  color: #d55c5f;
+  box-shadow: none;
+}
+form input:focus {
+  border: 1px solid var(--sb-theme-color);
+  box-shadow: 0 0 5px var(--sb-theme-color);
+}
