@@ -14,10 +14,13 @@ export class Controller {
 
   async init() {
     try {
+      loading.hidden = false;
       const weather = await this.model.getWeather();
       this.view.renderWeather(weather);
     } catch (error) {
       this.view.showMessage(error);
+    } finally {
+      loading.hidden = true;
     }
   }
 

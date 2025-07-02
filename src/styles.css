@@ -39,7 +39,9 @@ header nav {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
+#loading {
+  text-align: center;
+}
 #logo-name {
   font-size: 32px;
 }
